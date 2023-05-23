@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 800px;
+  box-shadow: hsl(0, 0%, 80%) 0 0 8px;
+  border-top: 5px solid blue;
+  border-bottom: 5px solid blue;
+  border-radius: 5px;
+  margin: 1.5em auto;
+  clear: both;
+}
+.form-wrapper {
+  margin: 1.5em 1em;
+  clear: both;
+}
+#course-form {
+  clear: both;
+}
+.form-wrapper .col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+  gap: 1.5em;
+}
+.form-wrapper .col input {
+  padding: 12px;
+  width: 100%;
+}
+.form-wrapper .col select {
+  padding: 12px;
+}
+#add-btn {
+  padding: 8px;
+  background: #71b390;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  float: right;
+  display: inline-block;
+  margin-bottom: 1.5em;
+}
+.fa-plus {
+  color: #fff;
+}
+#submit-btn {
+  background: #0554f2;
+  padding: 8px 40px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 0.5em;
+  float: right;
+  text-transform: uppercase;
+}
+#gp {
+  font-weight: 500;
+  font-family: Helvetica;
+  font-size: 1.2rem;
+}
+footer {
+  font-size: 0.8rem;
+  font-family: Helvetica;
+  font-weight: 300;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    width: fit-content;
+    margin: 1.5em 1em;
+  }
+  .form-wrapper .col {
+    gap: 0.5em;
+  }
+}
