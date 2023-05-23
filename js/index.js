@@ -2,12 +2,14 @@ const btn = document.getElementById("submit-btn");
 const addCourseBtn = document.getElementById("add-btn");
 const courseForm = document.getElementById("course-form");
 const gp = document.getElementById("gp");
+const removeCourseBtns = document.getElementsByClassName("remove-course");
+
 
 btn.addEventListener("click", () => {
   let data = [];
 
   // split form data
-  for (let i = 0; i < courseForm.length; i += 3) {
+  for (let i = 0; i < courseForm.length; i += 4) {
     let col = [];
     for (let j = i + 1; j < i + 3; j++) {
       col.push(courseForm[j].value);
@@ -20,7 +22,7 @@ btn.addEventListener("click", () => {
 addCourseBtn.addEventListener("click", () => {
   // create form input row
   const div = document.createElement("div");
-  div.classList.add("col");
+  div.className = "col";
 
   // create course code input box
   const courseCodeBox = document.createElement("input");
@@ -68,10 +70,27 @@ addCourseBtn.addEventListener("click", () => {
   select.appendChild(optionE);
   select.appendChild(optionF);
 
+  // create remove course button
+  const removeBtn = document.createElement("button");
+  removeBtn.className = "remove-course";
+
+  // create remove course icon
+  const i = document.createElement("i");
+  i.className = "fa fa-times"
+
+  // add remove icon to removeBtn
+  removeBtn.appendChild(i);
+
+  removeBtn.addEventListener("click", (e) => {
+    const self = e.target;
+    removeChild(self);
+  });
+
   // add input boxes to row
   div.appendChild(courseCodeBox);
   div.appendChild(courseUnitBox);
   div.appendChild(select);
+  div.appendChild(removeBtn);
 
   // add row div to form
   courseForm.appendChild(div);
@@ -101,4 +120,21 @@ function calculateGP(data) {
   }
   let cgpa = cummPoints / totalUnits;
   gp.textContent = `GP: ${cgpa.toFixed(2)}`
+}
+
+for (let btn of removeCourseBtns) {
+  btn.addEventListener("click", (e) => {
+    const self = e.target
+    removeChild(self);
+  });
+}
+
+function removeChild(self) {
+  if (removeCourseBtns.length > 1) {
+    if (self.parentElement.localName == "div") {
+      courseForm.removeChild(self.parentElement);
+    } else {
+      courseForm.removeChild(self.parentElement.parentElement);
+    }
+  }
 }
