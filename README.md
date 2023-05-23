@@ -4,7 +4,7 @@ A simple cgpa calculator to quickly compute grade point average by specifying th
 
 # Demo
 
-![before-adding-courses](https://github.com/codewitgabi/CGPA-calculator/demo_imgs/img1.png)
-![after-adding-courses](https://github.com/codewitgabi/CGPA-calculator/demo_imgs/img2.png)
+![before-adding-courses](https://github.com/codewitgabi/CGPA-calculator/blob/main/demo_imgs/img1.png)
+![after-adding-courses](https://github.com/codewitgabi/CGPA-calculator/blob/main/demo_imgs/img2.png)
 
 
